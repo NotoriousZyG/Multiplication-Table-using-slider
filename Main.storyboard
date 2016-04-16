@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Multiplication_Table" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WAa-d1-s6w">
+                                <rect key="frame" x="16" y="115" width="288" height="433"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="59" id="jkR-2k-a4d">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jkR-2k-a4d" id="Mip-dR-gzN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="9t8-WY-vxG"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Irj-Q7-6Up"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfm-KD-Df1">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Times Table" id="FVG-hl-e2y"/>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.050000000000000003" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uTJ-az-8Du">
+                                <rect key="frame" x="14" y="77" width="292" height="31"/>
+                                <connections>
+                                    <action selector="sliderValue:" destination="vXZ-lx-hvc" eventType="valueChanged" id="bgn-Gh-214"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WAa-d1-s6w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="0JD-zu-EeQ"/>
+                            <constraint firstItem="uTJ-az-8Du" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6AN-95-P0J"/>
+                            <constraint firstItem="lfm-KD-Df1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="15" id="9xM-AD-Kcz"/>
+                            <constraint firstItem="uTJ-az-8Du" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="57" id="Pb8-Gf-Ihu"/>
+                            <constraint firstItem="WAa-d1-s6w" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="PsA-1B-gsV"/>
+                            <constraint firstItem="lfm-KD-Df1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="QWp-uh-bF7"/>
+                            <constraint firstItem="uTJ-az-8Du" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="cGn-zL-FBU"/>
+                            <constraint firstItem="WAa-d1-s6w" firstAttribute="top" secondItem="uTJ-az-8Du" secondAttribute="bottom" constant="8" id="imW-Cj-QZL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lfm-KD-Df1" secondAttribute="trailing" constant="-16" id="r3Q-Wq-6Ix"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WAa-d1-s6w" secondAttribute="bottom" constant="20" id="yL5-Q6-y9Q"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="TableView" destination="WAa-d1-s6w" id="IHC-Vg-FZq"/>
+                        <outlet property="slider" destination="uTJ-az-8Du" id="5IK-l6-cvK"/>
+                        <outlet property="table" destination="WAa-d1-s6w" id="KPG-Ki-cTr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="26"/>
+        </scene>
+    </scenes>
+</document>
